@@ -143,8 +143,6 @@ describe('Find expressions', function () {
         var text   = "The sentence should include this and there is an island over there with that man and a tree";
         var result = highlight.find(text, lookup);
 
-        console.log(result);
-
         it('Should find', function () {
             assert.equal(result, "The sentence should include this and <em class='highlight'><em class='highlight'>there is</em> <em class='highlight'>an island</em></em> over there with that man and a tree");
         });
