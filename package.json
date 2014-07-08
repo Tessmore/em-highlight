@@ -1,0 +1,25 @@
+{
+  "name": "em-highlight",
+  "version": "0.0.1",
+  "description": "Looks for given terms in text and highlights them.",
+  "main": "lib/main.js",
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "devDependencies": {
+    "mocha": "1.7.x"
+  },
+  "dependencies": {
+    "sbd": "0.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tessmore/em-highlight.git"
+  },
+  "keywords": [
+    "Highlight",
+    "Search"
+  ],
+  "author": "Fabiën Tesselaar",
+  "license": "MIT"
+}

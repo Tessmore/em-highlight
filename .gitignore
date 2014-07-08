@@ -1,0 +1,7 @@
+data/
+lib-cov
+*.csv
+config.*
+logs
+npm-debug.log
+node_modules/
