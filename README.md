@@ -17,7 +17,9 @@ var lookup = [
 
 var result = highlight.find(text, lookup);
 
-// "We cannot <em class='highlight'>rule</em> this <em class='highlight'><em class='highlight'>rule</em> out</em> on other <em class='highlight'>rule</em>s and there is no stopping."
+// "We cannot <em class='highlight'>rule</em> this
+//  <em class='highlight'><em class='highlight'>rule</em> out</em> on other
+//  <em class='highlight'>rule</em>s and there is no stopping."
 ```
 
 # Notes
