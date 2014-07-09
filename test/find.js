@@ -44,7 +44,7 @@ describe('Find single word', function () {
         var result = highlight.find(text, lookup);
 
         it('Should find', function () {
-            assert.equal(result, "<em class='highlight'>sentence</em>");
+            assert.equal(result, "<em class='highlight'> sentence </em>");
         });
     });
 
@@ -54,7 +54,7 @@ describe('Find single word', function () {
         var result = highlight.find(text, lookup);
 
         it('Should find', function () {
-            assert.equal(result, "<em class='highlight'>sentence</em>");
+            assert.equal(result, "<em class='highlight'> sentence </em>");
         });
     });
 
@@ -64,31 +64,9 @@ describe('Find single word', function () {
         var result = highlight.find(text, lookup);
 
         it('Should find', function () {
-            assert.equal(result, "<em class='highlight'>Sentence</em>");
+            assert.equal(result, "<em class='highlight'> Sentence </em>");
         });
     });
-
-    describe('Subset of the word', function () {
-        var lookup = "sentence";
-        var text   = "sentences";
-        var result = highlight.find(text, lookup);
-
-        it('Should find subset', function () {
-            assert.equal(result, "<em class='highlight'>sentence</em>s");
-        });
-    });
-
-    /*
-    describe('Allow asciifolding', function () {
-        var lookup = "fabien";
-        var text   = "Fabiën";
-        var result = highlight.find(text, lookup);
-
-        it('Should find', function () {
-            assert.equal(result, "<em class='highlight'>Fabiën</em>");
-        });
-    });
-    */
 
     describe('Multiple occurences', function () {
         var lookup = "rule";
@@ -96,7 +74,7 @@ describe('Find single word', function () {
         var result = highlight.find(text, lookup);
 
         it('Should find', function () {
-            assert.equal(result, "We cannot <em class='highlight'>rule</em> this <em class='highlight'>rule</em> out on other <em class='highlight'>rule</em>s and there is no stopping.");
+            assert.equal(result, "We cannot <em class='highlight'> rule </em> this <em class='highlight'> rule </em> out on other rules and there is no stopping.");
         });
     });
 
@@ -113,7 +91,7 @@ describe('Find multiple words', function () {
         var result = highlight.find(text, lookup);
 
         it('Should find', function () {
-            assert.equal(result, "The sentence should include <em class='highlight'>this</em> and there is an island over there with <em class='highlight'>that</em> man and a tree");
+            assert.equal(result, "The sentence should include <em class='highlight'> this </em> and there is an island over there with <em class='highlight'> that </em> man and a tree");
         });
     });
 });
@@ -129,7 +107,7 @@ describe('Find expressions', function () {
         var result = highlight.find(text, lookup);
 
         it('Should find', function () {
-            assert.equal(result, "The sentence should include this and <em class='highlight'>there is an island</em> over there with <em class='highlight'>that man</em> and a tree");
+            assert.equal(result, "The sentence should include this and <em class='highlight'> there is an island </em> over there with <em class='highlight'> that man </em> and a tree");
         });
     });
 
@@ -143,8 +121,10 @@ describe('Find expressions', function () {
         var text   = "The sentence should include this and there is an island over there with that man and a tree";
         var result = highlight.find(text, lookup);
 
+        console.log(result);
+
         it('Should find', function () {
-            assert.equal(result, "The sentence should include this and <em class='highlight'><em class='highlight'>there is</em> <em class='highlight'>an island</em></em> over there with that man and a tree");
+            assert.equal(result, "The sentence should include this and <em class='highlight'> <em class='highlight'> there is </em> <em class='highlight'> an island </em> </em> over there with that man and a tree");
         });
     });
 
