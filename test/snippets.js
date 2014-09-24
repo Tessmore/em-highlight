@@ -39,7 +39,7 @@ describe('Snippets', function () {
             "a tree"
         ];
 
-        var text   = "The sentence should include this. An island over there with that man and a tree";
+        var text   = "The sentence has that man included in this sentence. An island over there with a tree";
         var result = highlight.snippets(text, lookup);
 
         it('Should find', function () {
