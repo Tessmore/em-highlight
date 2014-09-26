@@ -47,6 +47,17 @@ describe('Snippets', function () {
         });
     });
 
+    describe('Highlight everything in a snippet', function () {
+        var lookup = "appels peren vergelijken";
+
+        var text   = "ik zou graag appels met peren vergelijken";
+        var result = highlight.snippets(text, lookup);
+
+        it('Should find', function () {
+            assert.equal(result.length, 1);
+        });
+    });
+
     describe('Find multiple similar snippets', function () {
         var lookup = "rule";
         var text   = "The rules show that a rule can rule out any rule of order.";
