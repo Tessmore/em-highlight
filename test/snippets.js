@@ -47,17 +47,6 @@ describe('Snippets', function () {
         });
     });
 
-    describe('Highlight everything in a snippet', function () {
-        var lookup = ["appels", "peren", "vergelijken"];
-
-        var text   = "ik zou graag appels met peren vergelijken";
-        var result = highlight.snippets(text, lookup);
-
-        it('Should find', function () {
-            assert.equal(result.length, 1);
-        });
-    });
-
     describe('Find multiple similar snippets (A)', function () {
         var lookup = "rule";
         var text   = "The rules show that a rule can rule out any rule of order.";
@@ -75,6 +64,36 @@ describe('Snippets', function () {
 
         it('Should find', function () {
             assert.equal(result.length, 1);
+        });
+    });
+
+    describe('Find snippets encloded by comma', function () {
+        var lookup = ["hay fever"];
+        var text   = "She has a sore throat, hay fever, and other problems";
+        var result = highlight.snippets(text, lookup);
+
+        it('Should find', function () {
+            assert.equal(result.length, 1);
+        });
+    });
+
+    describe('Find snippets at end of sentence', function () {
+        var lookup = ["hay fever"];
+        var text   = "She has a sore throat, other problems, and hay fever.";
+        var result = highlight.snippets(text, lookup);
+
+        it('Should find', function () {
+            assert.equal(result.length, 1);
+        });
+    });
+
+    describe('Find snippets inside brackets, braces and other variants', function () {
+        var lookup = ["hay fever"];
+        var text   = "She has (hay fever). He has sore throat/hay fever. There is an outbreak of running noses [hay fever?] and sore throats.";
+        var result = highlight.snippets(text, lookup);
+
+        it('Should find', function () {
+            assert.equal(result.length, 3);
         });
     });
 });
