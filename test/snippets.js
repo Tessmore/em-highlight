@@ -48,7 +48,7 @@ describe('Snippets', function () {
     });
 
     describe('Highlight everything in a snippet', function () {
-        var lookup = "appels peren vergelijken";
+        var lookup = ["appels", "peren", "vergelijken"];
 
         var text   = "ik zou graag appels met peren vergelijken";
         var result = highlight.snippets(text, lookup);
@@ -58,7 +58,7 @@ describe('Snippets', function () {
         });
     });
 
-    describe('Find multiple similar snippets', function () {
+    describe('Find multiple similar snippets (A)', function () {
         var lookup = "rule";
         var text   = "The rules show that a rule can rule out any rule of order.";
         var result = highlight.snippets(text, lookup);
@@ -68,7 +68,7 @@ describe('Snippets', function () {
         });
     });
 
-    describe('Find multiple similar snippets', function () {
+    describe('Find multiple similar snippets (B)', function () {
         var lookup = ["rule", "rule out"];
         var text   = "The people rule out that a rule can rule out any rule of order.";
         var result = highlight.snippets(text, lookup);
