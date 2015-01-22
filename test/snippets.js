@@ -89,11 +89,11 @@ describe('Snippets', function () {
 
     describe('Find snippets inside brackets, braces and other variants', function () {
         var lookup = ["hay fever"];
-        var text   = "She has (hay fever). He has sore throat/hay fever. There is an outbreak of running noses [hay fever?] and sore throats.";
+        var text   = "She has (hay fever). He has sore throat/hay fever. There is an outbreak of running noses [hay fever?] and sore throats. Well there is troublewith HAY fever; ok.";
         var result = highlight.snippets(text, lookup);
 
         it('Should find', function () {
-            assert.equal(result.length, 3);
+            assert.equal(result.length, 4);
         });
     });
 });
