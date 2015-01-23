@@ -5,6 +5,8 @@
 var assert    = require('assert');
 var highlight = require('../lib/main');
 
+var _ = require('lodash');
+
 describe('Snippets', function () {
     describe('Find no snippet', function () {
         var lookup = [
