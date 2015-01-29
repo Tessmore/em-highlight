@@ -17,6 +17,7 @@ describe('Snippets', function () {
         var result = highlight.snippets(text, lookup);
 
         it('Should not find', function () {
+            console.log(result);
             assert.equal(result.length, 0);
         });
     });
