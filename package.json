@@ -1,6 +1,6 @@
 {
   "name": "em-highlight",
-  "version": "0.0.91",
+  "version": "0.0.92",
   "description": "Looks for given terms in text and highlights them.",
   "main": "lib/main.js",
   "scripts": {
